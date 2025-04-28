@@ -1,13 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+<title></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel='stylesheet' href='../template/assets/css/fonts.googleapis.css'>
+<link rel="stylesheet" href="../template/bower_components/angular-material/angular-material.css"/>
+<link rel="stylesheet" href="../template/assets/css/app.css"/>
+<link rel="stylesheet" href="css/experiment.css"/>
+<script src="../template/js/createjs-2015.05.21.min.js"></script>
+<script src="../template/js/canvasjs.min.js"></script>
+<script src="../template/bower_components/angular/angular.min.js"></script>
+<script src="../template/bower_components/angular-animate/angular-animate.js"></script>
+<script src="../template/bower_components/angular-aria/angular-aria.js"></script>
+<script src="../template/bower_components/angular-fullscreen/angular-fullscreen.js"></script>
+<script src="../template/js/Gettext.js"></script>
+<script type="text/javascript" src="../template/bower_components/angular-material/angular-material.js"></script>
+<script src="../template/js/getlanguage.js"></script>
+<script src="./src/user_controller.js"></script>
+<script src="./src/view.js"></script>
+<script src="./src/experiment.js"></script>
+<script src="../template/js/stopwatch.js"></script>
+<script type="text/javascript">
+    angular
+    .module('starterApp', ['ngMaterial','users'])
+    .config(function($mdThemingProvider, $mdIconProvider){
+        $mdIconProvider
+            .icon("menu"       , "../template/assets/svg/menu.svg"        , 24)
+            .icon("fullscreen"       , "../template/assets/icons/Icon3.svg", 24)
+            .icon("help"      , "../template/assets/icons/Icon2.svg", 24);
+            $mdThemingProvider.theme('default')
+                .primaryPalette('blue')
+                .accentPalette('red');
+    });
+</script>
 </head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<body id = "dialogContainer" style="background-color: #f2f2f2;" ng-app="starterApp" ng-controller="UserController as ul">
+    
+             	 
+         
+<md-toolbar class="md-toolbar-tools" id="main">
+    <md-button class="md-icon-button" hide-gt-md ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    <!-- //Experiment title gives here//   -->
+    <h1 flex="" layout="row" class="expTitle" id="expTitle">{{heading}}</h1>
+    <md-button class="md-icon-button" aria-label="help" ng-click="showActionToast()">
+        <md-icon md-svg-icon="help"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="fullscreen" ng-click="goFullscreen()">
+        <md-icon md-svg-icon="fullscreen"></md-icon>
+    </md-button>
+</md-toolbar>
+<md-content flex layout="row" style="background-color: #f2f2f2;">
+<md-content id="content" layout="column" style="background-color: #f2f2f2;">
+    <canvas id="demoCanvas" width="700" height="700" align="center" layout-fill experiment></canvas>
+    <div id="Copyright">{{copyright}}</div>
+</md-content>
+<md-sidenav id="site-sidenav" class="site-sidenav md-sidenav-left" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')">
+<div>
+    <md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()">{{variables}}
+        <span aria-hidden="true">
+<md-icon md-svg-src="md-toggle-arrow"  aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive1]" ></md-icon>
+</span></md-button>
+      
+      <!-- ////////////   -->
+      <div id="c" ng-hide="showVariables" class="div">
+        
+        <div ng-show="true">
+            <!-- Insert dropdown label for envrironment -->
+            <md-content class="md-title selectable" layout-padding>{{environment_txt}}</md-content>
+            <!-- Insert dropdown box for environment -->
+            <md-select placeholder="{{environment_array[0].environment}}" ng-model="environment" ng-change="changeEnvironment();" aria-label="environment" layout="row" layout-align="center" id="environment">
+                <md-option ng-repeat="x in environment_array" value="{{ x.index }}" label="{{x.index}}">{{ x.environment }}</md-option>
+            </md-select>
+            
+             <!-- Slider label for mass of steel cylinder -->
+            <md-content class="md-title selectable" layout-padding >{{steel_mass_txt}}  {{steel_mass}} {{mass_unit}}</md-content>
+            <!-- Slider for mass of steel cylinder -->
+            <div layout>      
+                <md-slider flex ng-model="steel_mass" step="0.01" min="0.1" max="1" aria-label="rating" ng-change="changeSteelMass();"></md-slider>        
+            </div>
+            
+             <!-- Slider label for mass of wooden cylinder -->
+            <md-content class="md-title selectable" layout-padding >{{wood_mass_txt}}  {{wood_mass}} {{mass_unit}}</md-content>
+            <!-- Slider for  mass of wooden cylinder -->
+            <div layout>      
+                <md-slider flex ng-model="wood_mass" step="0.01" min="0.01" max="0.1" aria-label="rating" ng-change="changeWoodenMass();"></md-slider>        
+            </div> 
+             
+             <!-- Heading label of adjust position -->
+            <md-content class="md-title selectable" layout-padding layout="row" layout-align="center" ><u>{{position_txt}}</u></md-content>
+            
+             <!-- Slider label for position of knife edge -->
+            <md-content class="md-title selectable" layout-padding >{{knife_position_txt}}  {{knife_position}} {{cm_unit}}</md-content>
+            <!-- Slider for  position of knife edge -->
+            <div layout>      
+                <md-slider flex ng-model="knife_position" step="1" min="10" max="120" aria-label="rating" ng-change="changeKnifePosition();" ng-disabled ="knife_disabled"></md-slider>        
+            </div> 
+            
+             <!-- Slider label for position of steel and wood cylinder -->
+            <md-content class="md-title selectable" layout-padding >{{steel_wood_txt}}  {{steel_wood_position}} {{cm_unit}}</md-content>
+            <!-- Slider for  position of steel and wood cylinder -->
+            <div layout>      
+                <md-slider flex ng-model="steel_wood_position" step="1" min="5" max="120" aria-label="rating" ng-change="changeSteelWoodPosition();"></md-slider>        
+            </div> 
+            
+             <!-- Slider label for position of cylinder -->
+            <md-content class="md-title selectable" layout-padding >{{cylinder_txt}}  {{cylinder_position}} {{cm_unit}}</md-content>
+            <!-- Slider for  position of cylinder -->
+            <div layout>      
+                <md-slider flex ng-model="cylinder_position" step="1" min="55" max="65" aria-label="rating" ng-change="changeCylinderPosition();"></md-slider>        
+            </div> 
+            
+            <!-- Insert checkbox for measurements -->
+            <md-checkbox class="md-title selectable" layout="row" layout-align="center center" ng-model="showMeasurements" aria-label="Checkbox 1" id="showMeasurement" ng-change="showMeasurement()" ng-disabled="measurementDisabled">{{measurementText}}</md-checkbox>
+            
+            <md-list-item layout="row" layout-align="center center">
+                <span>
+                    <!-- Button for revert the pendulum  -->
+                    <section layout="row" layout-align="center center">
+                      <md-button class="md-raised" ng-model = "invert"  ng-click="invertPendulum();" ng-disabled="revert_disabled">{{revert_txt}}</md-button>
+                    </section>
+                </span>
+                <span>
+                    <!-- Button for play or pause pendulum motion  -->
+                    <section layout="row" layout-align="center center">
+                      <md-button class="md-raised" ng-model = "pause" id="reset_btn" ng-click="playPause();" style="padding:0 13px;" ng-disabled="playPause_disabled">{{palay_pause_txt}}</md-button>
+                    </section>
+                </span>
+            </md-list-item>
+           
+            
+           
+            <md-list-item layout="row" layout-align="center center" layout-margin="16px">
+                <span>
+                    <!-- Button for stop pendulum motion  -->
+                    <section layout="row" layout-align="center center">
+                      <md-button class="md-raised" ng-model = "stopMotion" ng-click="stopMotion();" ng-disabled="stop_disabled">{{stop_motion_txt}}</md-button>
+                    </section>
+                </span>
+                <span>
+                    <!-- Button for reset experiment  -->
+                    <section layout="row" layout-align="center center">
+                      <md-button class="md-raised" id="reset_btn" ng-click="resetExperiment();" style="padding:0 13px;" ng-disabled="reset_disabled">{{reset_txt}}</md-button>
+                    </section>
+                </span>
+            </md-list-item>
+            
+           
+            
+        </div>
+      </div>      
+      <!-- ////////////   -->
+      
+    
+    </div>
+  </md-sidenav>
+</md-content>
+    
 </body>
+<script src="../template/js/loading.js"></script>
+<script  async="async">
+
+if(navigator.serviceWorker) {
+  navigator
+    .serviceWorker
+    .register('service_worker_Katers_Pendulum.js')
+    .then(function(r) {
+      console.log('NW  App now available offline');
+    })
+    .catch(function(e) {
+      console.log('NW App NOT available offline');
+      console.log(e);
+    });
+} else {
+  console.log('Service workers are not supported');
+}
+
+</script>
 </html>

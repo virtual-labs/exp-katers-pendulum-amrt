@@ -1,1 +1,1 @@
-## Experiment name
+## Kater's pendulum
