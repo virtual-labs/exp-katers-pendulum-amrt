@@ -16,10 +16,10 @@
     {
       "question": "The time period of a simple pendulum can be calculated by the equation",
       "answers": {
-        "a": "2π \sqrt{\frac{l}{g}}",
-        "b": "4π \sqrt{\frac{l}{g}}",
-        "c": "2π \frac{l}{g}",
-        "d": "4π \frac{l}{g}"
+        "a": "2π $\sqrt{\frac{l}{g}}$",
+        "b": "4π $\sqrt{\frac{l}{g}}$",
+        "c": "2π $\frac{l}{g}$",
+        "d": "4π $\frac{l}{g}$"
       },
      
       "correctAnswer": "a",
