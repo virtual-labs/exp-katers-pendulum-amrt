@@ -30,3 +30,22 @@ Distance of  K2 from C.G,h2 =...............m.
 
 Acceleration due to gravity, g =...............ms<sup>-2</sup>.
 
+
+
+### Simulation
+<ul>
+<li>Choose desired environment from combo box.</li>
+<li>Select suitable values for mass of wood cylinder and mass of steel cylinder.</li>
+<li>Choose the position of knife edge, steel and wood cylinder by changing the sliders for it.</li>
+<li>After choosing values, place the mouse over wood cylinder, drag and make it to oscillate.</li>
+<li>Note the time for 10 oscillations, by clicking on the **START** and **STOP** button of the stop watch. </li>
+<li>Click on **STOP**  button under variables, for the pendulum to stop oscillating.</li>
+<li>Click on the **Invert** button to invert the pendulum.</li>
+<li>Again take the time for 10 oscillations.</li>
+<li>Click on **Show Measurements** checkbox to get the value of h<sub>1</sub> and h<sub>2</sub>.</li>
+<li>Repeat the experiment by changing the values in **variables**. </li>
+</ul>
+**Note**-When you click on the wood or steel cylinder after selecting all the variables, a box appears if the selected values is not  applicable.
+
+## Result
+The acceleration due to gravity at a given place is found to be =...............ms<sup>-2</sup>.
