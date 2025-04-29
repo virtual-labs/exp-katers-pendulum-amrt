@@ -18,6 +18,8 @@ Kater's pendulum, stopwatch, meter scale and knife edges.
 
 To determine T<sub>1</sub> and T<sub>2</sub>
 
+
+
 ![kat fig1](https://github.com/user-attachments/assets/bf7417e6-473b-4fc4-85fa-4ea082b0eb21)
 
 
@@ -26,6 +28,10 @@ Distance of  K1 from C.G,h1  = ...............m.
 Distance of  K2 from C.G,h2 =...............m.
 
 ![keterseq](https://github.com/user-attachments/assets/f01d57ac-0504-4344-af0e-55c44289df4e)
+
+$$ g=\frac{8\pi^{2}}{\frac{T_{1}^{2}+T_{2}^{2}}{h_{1}+h_{2}}+\frac{T_{1}^{2}-T_{2}^{2}}{h_{1}-h_{2}}} $$
+
+
 
 
 Acceleration due to gravity, g =...............ms<sup>-2</sup>.
