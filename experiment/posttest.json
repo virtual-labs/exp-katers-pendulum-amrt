@@ -16,10 +16,10 @@
     {
       "question": "The time period of a simple pendulum can be calculated by the equation",
       "answers": {
-        "a": "<img src='./images/a.jpg' />",
-        "b": "<img src='./images/b.jpg' />",
-        "c": "<img src='./images/c.jpg' />",
-        "d": "<img src='./images/d.jpg' />"
+        "a": "<img src='./images/a.jpg' width='25' />",
+        "b": "<img src='./images/b.jpg' width='50'/>",
+        "c": "<img src='./images/c.jpg' width='100'/>",
+        "d": "<img src='./images/d.jpg' width='150'/>"
       },
      
       "correctAnswer": "a",
