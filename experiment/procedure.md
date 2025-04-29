@@ -29,7 +29,7 @@ Distance of  K2 from C.G,h2 =...............m.
 
 ![keterseq](https://github.com/user-attachments/assets/f01d57ac-0504-4344-af0e-55c44289df4e)
 
-<img src='./image/g.jpg' width='100' />
+<img src='./images/g.jpg' width='100' />
 
 Acceleration due to gravity, g =...............ms<sup>-2</sup>.
 
