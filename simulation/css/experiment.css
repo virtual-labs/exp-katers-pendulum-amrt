@@ -1,0 +1,7 @@
+#site-sidenav{
+	display:none;
+	overflow-x: hidden; 
+}
+#showMeasurement > :first-child{
+    left: 50px;
+}
