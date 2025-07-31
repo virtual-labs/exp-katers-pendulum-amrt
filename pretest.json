@@ -1,0 +1,65 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Among the following which will give more accurate value of g?",
+      "answers": {
+        "a": "Kater's pendulum",
+        "b": "Bar pendulum",
+        "c": "Simple pendulum",
+        "d": "mass spring system"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following statement is correct?",
+      "answers": {
+        "a": "The value of g is maximum at poles",
+        "b": "The values of g vary from place to place on the surface of earth.",
+        "c": "The value of g at the centre of earth is zero",
+        "d": "All the above"
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+     {
+      "question": "Time taken to complete one oscillation of a periodic motion is called",
+      "answers": {
+        "a": "Frequency",
+        "b": "Wavelength",
+        "c": "Amplitude",
+        "d": "Time period"
+      },
+      
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "As we go down the surface of earth , the value of g",
+      "answers": {
+        "a": "Decreases",
+        "b": "Remains same",
+        "c": "Increases",
+        "d": "Cannot be predicted"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The time period of a simple pendulum can be calculated by the equation",
+      "answers": {
+        "a": "<img src='./images/a.jpg' width='100' />",
+        "b": "<img src='./images/b.jpg' width='100'/>",
+        "c": "<img src='./images/c.jpg' width='100'/>",
+        "d": "<img src='./images/d.jpg' width='100'/>"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
