@@ -36,6 +36,30 @@
       
       "correctAnswer": "d",
       "difficulty": "beginner"
+    },
+    {
+      "question": "As we go down the surface of earth , the value of g",
+      "answers": {
+        "a": "Decreases",
+        "b": "Remains same",
+        "c": "Increases",
+        "d": "Cannot be predicted"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The time period of a simple pendulum can be calculated by the equation",
+      "answers": {
+        "a": "<img src='./images/a.jpg' width='100' />",
+        "b": "<img src='./images/b.jpg' width='100'/>",
+        "c": "<img src='./images/c.jpg' width='100'/>",
+        "d": "<img src='./images/d.jpg' width='100'/>"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
     }
   ]
 }
