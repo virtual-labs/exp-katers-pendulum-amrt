@@ -193,8 +193,20 @@ function dragPendulum(scope){
     });
 }
 
+/**
+ * Realistic pendulum motion (simple harmonic motion):
+ * Angular velocity is zero at the extremes and maximum at the centre.
+ * createjs.Ease.sineInOut follows a half-cosine curve over time, which is
+ * exactly how a real pendulum's angle evolves, so it replaces the previous
+ * default (linear/constant-speed) tweening.
+ */
 function oscilation(_angle){
-    clr_oscilation = createjs.Tween.get(pendulumContainer,{override:true}).to({rotation:_angle * -1},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR).wait(OSCILATION_STOP_FACTOR).to({rotation:(_angle)},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR).wait(OSCILATION_STOP_FACTOR).call(function(){
+    clr_oscilation = createjs.Tween.get(pendulumContainer,{override:true})
+        .to({rotation:_angle * -1},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR, createjs.Ease.sineInOut)
+        .wait(OSCILATION_STOP_FACTOR)
+        .to({rotation:(_angle)},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR, createjs.Ease.sineInOut)
+        .wait(OSCILATION_STOP_FACTOR)
+        .call(function(){
         
         
         if(oscilationAngle <= 0){
@@ -208,8 +220,16 @@ function oscilation(_angle){
         
     });
     
-    clr_oscilation_120 = createjs.Tween.get(measurement_container,{override:true}).to({rotation:_angle * -1},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR).wait(OSCILATION_STOP_FACTOR).to({rotation:(_angle)},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR).wait(OSCILATION_STOP_FACTOR);
-    clr_oscilation_h = createjs.Tween.get(measurement_container_h,{override:true}).to({rotation:_angle * -1},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR).wait(OSCILATION_STOP_FACTOR).to({rotation:(_angle)},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR).wait(OSCILATION_STOP_FACTOR);
+    clr_oscilation_120 = createjs.Tween.get(measurement_container,{override:true})
+        .to({rotation:_angle * -1},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR, createjs.Ease.sineInOut)
+        .wait(OSCILATION_STOP_FACTOR)
+        .to({rotation:(_angle)},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR, createjs.Ease.sineInOut)
+        .wait(OSCILATION_STOP_FACTOR);
+    clr_oscilation_h = createjs.Tween.get(measurement_container_h,{override:true})
+        .to({rotation:_angle * -1},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR, createjs.Ease.sineInOut)
+        .wait(OSCILATION_STOP_FACTOR)
+        .to({rotation:(_angle)},(T2 / 2) * 1000 - OSCILATION_STOP_FACTOR, createjs.Ease.sineInOut)
+        .wait(OSCILATION_STOP_FACTOR);
 }
 
 function playPause(scope){
