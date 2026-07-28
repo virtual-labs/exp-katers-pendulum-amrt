@@ -1,10 +1,41 @@
-## Procedure
+# Procedure
 
-### Apparatus
+## Apparatus
 
 Kater's pendulum, stopwatch, meter scale and knife edges.
 
-### Real Lab Procedure
+## Procedure for Simulation
+### Step 1: Set Up the Parameters
+1. Select your desired Environment (e.g., Earth) from the drop-down menu.
+2. Set the values for the Mass of Steel Cylinder and Mass of Wood Cylinder using the sliders or input boxes.
+3. Adjust the positions for Knife Edge $K_1$, Knife Edge $K_2$, Steel Cylinder, and Wood Cylinder using their respective sliders.
+4. Verify all values. (Note: If any parameter combination is invalid, a pop-up alert will appear when you try to interact with the pendulum).
+
+### Step 2: Oscillating the Pendulum (First Position — $K_1$)
+1. **Displace the Pendulum**: Click and hold the mouse on the Wood Cylinder, drag it slightly to one side (to give it an initial angular displacement), and release the mouse button to start the oscillation.
+2. **Start the Stopwatch**: As the pendulum passes its central vertical position, click **START** on the stopwatch.
+3. **Count Oscillations**: Count 10 complete oscillations (one complete back-and-forth movement equals 1 oscillation).
+4. **Stop the Stopwatch**: Click **STOP** on the stopwatch as soon as the 10th oscillation completes. Record this time as $t_1$.
+5. **Stop Pendulum Motion**: Click the **STOP** button under the Variables/Controls panel to halt the pendulum.
+
+### Step 3: Oscillating the Inverted Pendulum (Second Position — $K_2$)
+1. Click the **INVERT** button on the control panel to flip the pendulum upside down.
+2. **Displace the Pendulum**: Click and drag the cylinder slightly to one side again and release to start the oscillations.
+3. **Time 10 Oscillations**: Use the stopwatch to measure the time for 10 complete oscillations in this inverted state. Record this time as $t_2$.
+4. Click **STOP** under the control panel to stop the motion.
+
+### Step 4: Take Distance Measurements & Calculate
+1. Check the Show Measurements checkbox to view the calculated distances:
+- $h_1$: Distance from Knife Edge $K_1$ to the Centre of Gravity (C.G.).
+- $h_2$: Distance from Knife Edge $K_2$ to the Centre of Gravity (C.G.).
+2. Calculate time periods:
+  - $T_1 = \frac{t_1}{10}$
+  - $T_2 = \frac{t_2}{10}$
+3. Substitute $T_1, T_2, h_1,$ and $h_2$ into the formula to calculate $g$:
+
+$$g = \frac{8\pi^2}{\frac{T_1^2 + T_2^2}{h_1 + h_2} + \frac{T_1^2 - T_2^2}{h_1 - h_2}}$$
+
+## Real Lab Procedure
 <ul>
   <li>Shift the weight <strong>W<sub>1</sub></strong> to one end of Kater’s pendulum and fix it.</li>
   <li>Fix the knife edge <strong>K<sub>1</sub></strong> just below <strong>W<sub>1</sub></strong>.</li>
@@ -39,22 +70,6 @@ $$ g=\frac{8\pi^{2}}{\frac{T_{1}^{2}+T_{2}^{2}}{h_{1}+h_{2}}+\frac{T_{1}^{2}-T_{
 
 Acceleration due to gravity, g =...............ms<sup>-2</sup>.
 
-
-
-### Simulation
-<ul>
-<li>Choose desired environment from combo box.</li>
-<li>Select suitable values for mass of wood cylinder and mass of steel cylinder.</li>
-<li>Choose the position of knife edge, steel and wood cylinder by changing the sliders for it.</li>
-<li>After choosing values, place the mouse over wood cylinder, drag and make it to oscillate.</li>
-<li>Note the time for 10 oscillations, by clicking on the **START** and **STOP** button of the stop watch. </li>
-<li>Click on **STOP**  button under variables, for the pendulum to stop oscillating.</li>
-<li>Click on the **Invert** button to invert the pendulum.</li>
-<li>Again take the time for 10 oscillations.</li>
-<li>Click on **Show Measurements** checkbox to get the value of h<sub>1</sub> and h<sub>2</sub>.</li>
-<li>Repeat the experiment by changing the values in **variables**. </li>
-</ul>
-**Note**-When you click on the wood or steel cylinder after selecting all the variables, a box appears if the selected values is not  applicable.
 
 ## Result
 The acceleration due to gravity at a given place is found to be =...............ms<sup>-2</sup>.
